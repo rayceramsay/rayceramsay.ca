@@ -1,6 +1,10 @@
-# Project Standards & Patterns
+# Rayce Ramsay Personal Portfolio/Resume Site
 
-## Tech Stack
+This is a resume/portfolio website for Rayce Ramsay (a recent computer science grad) to demonstrate his software development background to potential employers.
+
+## Project Standards & Patterns
+
+### Tech Stack
 
 - **Framework:** Next.js v16 (App Router)
 - **Language:** TypeScript (Strict)
@@ -8,7 +12,7 @@
 - **Components:** Shadcn/UI (Radix Primitives)
 - **Icons:** Lucide React
 
-## Component Guidelines
+### Component Guidelines
 
 - **Architecture:** Atomic Design. 1 component per file in `src/components`.
 - **Styling Patterns:** Mobile-first. Use CVA for variants; no boolean style props.
@@ -16,7 +20,7 @@
 - **Logic:** Presentational UI only. Extract business logic/state to custom hooks.
 - **A11y:** WCAG 2.1 compliant. Use semantic HTML & Radix roles.
 
-## Code Style
+### Code Style
 
 - **Naming:** Components (PascalCase), Hooks (useCamelCase), Utils (camelCase).
 - **Types:** Strict interfaces for all props. No `any`.
