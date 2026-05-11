@@ -47,8 +47,8 @@ export function AboutSection() {
           <StatCard stat={GPA_STAT} size='lg' />
         </div>
 
-        <div className='flex flex-col gap-6'>
-          <div className='bg-surface relative aspect-square max-w-xs overflow-hidden rounded-2xl'>
+        <div className='flex flex-col items-center gap-6 md:items-start'>
+          <div className='bg-surface relative aspect-square w-full max-w-xs overflow-hidden rounded-2xl'>
             <Image
               src={'/images/rayce_hockey_headshot.jpg'}
               alt='Rayce Ramsay'
@@ -58,7 +58,10 @@ export function AboutSection() {
             />
           </div>
 
-          <ul className='flex flex-col gap-4' aria-label='Personal highlights'>
+          <ul
+            className='flex w-full flex-col gap-4'
+            aria-label='Personal highlights'
+          >
             {ABOUT_BULLETS.map((text, i) => (
               <li key={i} className='flex items-start gap-3'>
                 <CheckCircle2
