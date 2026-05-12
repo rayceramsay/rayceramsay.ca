@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useNavMenu } from '@/hooks/useNavMenu'
 import { Button } from '@/components/atoms/Button'
 import type { NavLink } from '@/types/portfolio'
+import { RESUME_URL } from '@/data/links'
 
 interface MobileMenuProps {
   links: NavLink[]
@@ -60,8 +61,8 @@ export function MobileMenu({ links, activeHref }: MobileMenuProps) {
           </ul>
         </nav>
         <Button variant='pill' size='lg' tabIndex={isOpen ? 0 : -1} asChild>
-          <Link href='#contact' onClick={close}>
-            Get in Touch
+          <Link href={RESUME_URL} target='_blank'>
+            View Resume
           </Link>
         </Button>
       </div>
