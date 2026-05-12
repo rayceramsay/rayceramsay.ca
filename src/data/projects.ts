@@ -60,7 +60,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   {
     id: '6',
     title: 'Music Trivia Game',
-    subtitle: 'Multiplayer Trivia Game',
+    subtitle: 'Single Player Trivia Game',
     description:
       'Led a team of 5 to build a music trivia game in Java using Clean Architecture and Test-Driven Development, implementing audio playback, save/load functionality, and SQLite persistence with 90%+ JUnit test coverage.',
     techStack: ['Java', 'SQLite', 'JUnit', 'Git'],
