@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Code2 } from 'lucide-react'
 import { Button } from '@/components/atoms/Button'
@@ -5,14 +7,17 @@ import { NavLink } from '@/components/molecules/NavLink'
 import { MobileMenu } from '@/components/organisms/MobileMenu'
 import { NAV_LINKS } from '@/data/navigation'
 import { RESUME_URL } from '@/data/links'
+import { useActiveSection } from '@/hooks/useActiveSection'
 
 export function SiteHeader() {
+  const activeHref = useActiveSection(NAV_LINKS.map((l) => l.href))
+
   return (
     <header
       role='banner'
       className='bg-background/95 border-border sticky top-0 z-30 w-full border-b backdrop-blur-sm'
     >
-      <div className='mx-auto flex h-header max-w-6xl items-center justify-between gap-6 px-6'>
+      <div className='h-header mx-auto flex max-w-6xl items-center justify-between gap-6 px-6'>
         <Link
           href='/'
           aria-label='Rayce Ramsay — home'
@@ -27,7 +32,12 @@ export function SiteHeader() {
         <nav aria-label='Main navigation' className='hidden md:block'>
           <ul className='flex items-center gap-7'>
             {NAV_LINKS.map((link) => (
-              <NavLink key={link.href} href={link.href} label={link.label} />
+              <NavLink
+                key={link.href}
+                href={link.href}
+                label={link.label}
+                isActive={activeHref === link.href}
+              />
             ))}
           </ul>
         </nav>
@@ -40,7 +50,7 @@ export function SiteHeader() {
           </Button>
         </div>
 
-        <MobileMenu links={NAV_LINKS} />
+        <MobileMenu links={NAV_LINKS} activeHref={activeHref} />
       </div>
     </header>
   )

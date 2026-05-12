@@ -8,9 +8,10 @@ import type { NavLink } from '@/types/portfolio'
 
 interface MobileMenuProps {
   links: NavLink[]
+  activeHref?: string
 }
 
-export function MobileMenu({ links }: MobileMenuProps) {
+export function MobileMenu({ links, activeHref }: MobileMenuProps) {
   const { isOpen, toggle, close } = useNavMenu()
 
   return (
@@ -46,7 +47,11 @@ export function MobileMenu({ links }: MobileMenuProps) {
                   href={link.href}
                   onClick={close}
                   tabIndex={isOpen ? 0 : -1}
-                  className='text-foreground hover:text-foreground-muted focus-visible:ring-foreground block rounded-sm px-4 py-3 text-2xl font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none'
+                  className={`focus-visible:ring-foreground block rounded-sm px-4 py-3 text-2xl font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none ${
+                    activeHref === link.href
+                      ? 'text-foreground underline underline-offset-4'
+                      : 'text-foreground hover:text-foreground-muted'
+                  }`}
                 >
                   {link.label}
                 </Link>
