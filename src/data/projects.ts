@@ -33,7 +33,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   {
     id: '3',
     title: 'Swim By Shea',
-    subtitle: 'E-Commerce Platform',
+    subtitle: 'Small Business E-Commerce Platform',
     description:
       'Full-stack e-commerce platform with Stripe payment integration and a custom CMS for inventory and order management. Migrated a legacy PHP monolith to a decoupled React and REST API architecture, improving scalability and maintainability.',
     techStack: ['React', 'TailwindCSS', 'PHP', 'MySQL', 'Docker', 'Stripe'],
