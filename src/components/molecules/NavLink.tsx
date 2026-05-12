@@ -31,12 +31,26 @@ export function NavLink({
   className,
   onClick,
 }: NavLinkProps) {
+  function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    const id = href.startsWith('#') ? href.slice(1) : null
+    if (id) {
+      const target = document.getElementById(id)
+      if (target) {
+        e.preventDefault()
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        target.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth' })
+        history.pushState(null, '', href)
+      }
+    }
+    onClick?.()
+  }
+
   return (
     <li>
       <Link
         href={href}
         className={cn(navLinkVariants({ isActive }), className)}
-        onClick={onClick}
+        onClick={handleClick}
       >
         {label}
       </Link>
