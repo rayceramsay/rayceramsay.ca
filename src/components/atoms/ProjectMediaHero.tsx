@@ -34,6 +34,7 @@ export function ProjectMediaHero({
     if (!video) return
     video.pause()
     video.currentTime = 0
+    video.load()
   }, [])
 
   if (media.length === 0) return null
@@ -73,7 +74,7 @@ export function ProjectMediaHero({
           loop
           playsInline
           preload='metadata'
-          className='h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
+          className='h-full w-full object-cover'
         />
       )}
 
