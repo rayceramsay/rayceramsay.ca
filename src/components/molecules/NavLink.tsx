@@ -42,15 +42,13 @@ export function NavLink({
   }
 
   return (
-    <li>
-      <Link
-        href={href}
-        className={cn(navLinkVariants({ isActive }), className)}
-        onClick={handleClick}
-        tabIndex={tabIndex}
-      >
-        {label}
-      </Link>
-    </li>
+    <Link
+      href={href}
+      className={cn(navLinkVariants({ isActive }), className)}
+      onClick={handleClick}
+      tabIndex={tabIndex}
+    >
+      {label}
+    </Link>
   )
 }
