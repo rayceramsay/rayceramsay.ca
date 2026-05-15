@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
-import { useSmoothScrollToHash } from '@/hooks/useSmoothScrollToHash'
+import { smoothScrollToHash } from '@/lib/smoothScrollToHash'
 
 const navLinkVariants = cva(
   'text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 rounded-sm',
@@ -36,8 +36,6 @@ export function NavLink({
   onClick,
   tabIndex = 0,
 }: NavLinkProps) {
-  const smoothScrollToHash = useSmoothScrollToHash()
-
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     smoothScrollToHash(e, href)
     onClick?.()

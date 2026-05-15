@@ -4,11 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { NAV_LINKS } from '@/data/navigation'
 import { EMAIL } from '@/data/links'
-import { useSmoothScrollToHash } from '@/hooks/useSmoothScrollToHash'
+import { smoothScrollToHash } from '@/lib/smoothScrollToHash'
 
 export function SiteFooter() {
-  const smoothScrollToHash = useSmoothScrollToHash()
-
   return (
     <footer role='contentinfo' className='bg-surface-dark text-white'>
       <div className='mx-auto flex max-w-6xl flex-col items-start justify-between gap-12 px-6 py-10 md:flex-row md:items-center md:gap-6'>
