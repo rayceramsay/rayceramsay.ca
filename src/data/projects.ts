@@ -1,8 +1,11 @@
 import type { ProjectItem } from '@/types/portfolio'
 import project1Poster from '@/assets/images/projects/1/poster.png'
+import project1Architecture from '@/assets/images/projects/1/architecture_diagram.jpg'
 import project1Content1 from '@/assets/images/projects/1/content1.png'
 import project1Content2 from '@/assets/images/projects/1/content2.png'
+import project1Content3 from '@/assets/images/projects/1/content3.png'
 import project2Poster from '@/assets/images/projects/2/poster.png'
+import project2Architecture from '@/assets/images/projects/2/architecture_diagram.png'
 import project3Poster from '@/assets/images/projects/3/poster.png'
 import project4Poster from '@/assets/images/projects/4/poster.png'
 import project4Content1 from '@/assets/images/projects/4/content1.png'
@@ -21,18 +24,18 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     title: 'JERC Sentry',
     subtitle: 'AI Scam Call Defence',
     description:
-      'Real-time AI inference pipeline using Deepgram and Groq APIs to classify live phone call scams at the network level with sub-second response latency. Includes an async FastAPI/WebSocket backend with Telnyx integrations, Flutter mobile app with Firebase FCM fraud alerts for family intervention, and Terraform-automated infrastructure.',
+      'A real-time AI inference pipeline that uses the Deepgram and Groq APIs to classify live phone call scams at the network level with sub-second latency. The system includes an asynchronous FastAPI and WebSocket backend with Telnyx integrations for call control, a Flutter mobile app featuring Firebase FCM fraud alerts for family intervention, and infrastructure automated via Terraform.',
     techStack: [
       'FastAPI',
       'Flutter',
       'PostgreSQL',
       'Terraform',
-      'Deepgram',
-      'Groq',
-      'Telnyx',
-      'Firebase',
       'GitHub Actions',
       'pytest',
+      'Telnyx',
+      'Groq',
+      'Deepgram',
+      'Firebase',
     ],
     demoUrl: 'https://jerc-beta.pages.dev',
     demoLabel: 'Documentation Site',
@@ -45,13 +48,23 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       },
       {
         type: 'image',
+        src: project1Architecture,
+        alt: 'Diagram showing the architecture of the JERC Sentry system.',
+      },
+      {
+        type: 'image',
         src: project1Content1,
-        alt: 'Screenshot of a mobile device showing a notification for a scam call alert.',
+        alt: 'Screenshot of the JERC Sentry app dashboard.',
       },
       {
         type: 'image',
         src: project1Content2,
-        alt: 'Screenshot of the JERC Sentry React dashboard showing a detected scam call with classification details.',
+        alt: 'Screenshot of the JERC Sentry app dashboard showing a detected scam call with classification details.',
+      },
+      {
+        type: 'image',
+        src: project1Content3,
+        alt: 'Screenshot of a mobile device showing a notification for a scam call alert.',
       },
     ],
   },
@@ -60,15 +73,28 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     title: 'AI Doctors',
     subtitle: 'Drug Interaction Predictor',
     description:
-      'FastAPI-based clinical decision support system for predicting drug-drug interaction risks from structured patient data. Features Python ETL pipelines to normalize five medical datasets into PostgreSQL, a RAG pipeline, an authenticated React dashboard for inference, and AWS ECS/RDS/S3 infrastructure provisioned via Terraform.',
-    techStack: ['FastAPI', 'React', 'AWS', 'Terraform', 'PostgreSQL', 'Jest'],
-    githubUrl: 'https://github.com/UofT-CSC490-F2025/AIDoctors',
+      'A FastAPI-based clinical decision support system that predicts drug-drug interaction risks from structured patient data. The system features Python ETL pipelines to normalize five medical datasets into PostgreSQL, a RAG pipeline utilizing Amazon Bedrock for LLM inference, an authenticated interactive React dashboard, and AWS infrastructure (ECS, RDS, and S3) provisioned via Terraform.',
+    techStack: [
+      'FastAPI',
+      'React',
+      'AWS',
+      'Terraform',
+      'PostgreSQL',
+      'Docker',
+      'Jest',
+    ],
+    githubUrl: 'https://github.com/rayceramsay/ai-ddi-predictor',
     media: [
       {
         type: 'video',
         src: '/videos/projects/2/demo.mp4',
         alt: 'AI Doctors demo video showcasing the drug interaction prediction features.',
         poster: project2Poster,
+      },
+      {
+        type: 'image',
+        src: project2Architecture,
+        alt: 'Diagram showing the architecture of the AI Doctors system.',
       },
     ],
   },
@@ -77,7 +103,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     title: 'Studio Avele (Swim By Shea)',
     subtitle: 'Small Business E-Commerce Platform',
     description:
-      'Full-stack e-commerce platform with Stripe payment integration and a custom CMS for inventory and order management. Migrated a legacy PHP monolith to a decoupled React and REST API architecture, improving scalability and maintainability.',
+      'A full-stack e-commerce platform featuring Stripe payment integration and a custom CMS for inventory and order management. It involved migrating a legacy PHP monolith to a decoupled React and REST API architecture, which improved scalability and maintainability.',
     techStack: ['React', 'TailwindCSS', 'PHP', 'MySQL', 'Docker', 'Stripe'],
     media: [
       {
@@ -94,7 +120,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     title: 'U of T Booking Bot',
     subtitle: 'Automated Activity Registration',
     description:
-      'Playwright automation tool with a PyQt6 desktop GUI to secure high-demand university activity bookings within seconds of their release. Integrates native OS schedulers and SQLite to automate registrations at precise intervals, consistently beating 30-second sell-out windows.',
+      'A Playwright-based automation tool featuring a PyQt6 desktop GUI designed to secure high-demand university activity bookings within seconds of release. The system integrates native OS schedulers and SQLite to automate registrations at precise intervals, consistently bypassing 30-second sell-out windows.',
     techStack: ['Python', 'Playwright', 'SQLite', 'PyQt6'],
     githubUrl: 'https://github.com/ethanmcf/UofTBookingBot',
     media: [
@@ -127,7 +153,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     title: 'NHL Goaltender Height Analysis',
     subtitle: 'Goaltender Performance Study',
     description:
-      'Statistical analysis of 20+ years of NHL goalie data in R using tidyverse, GAMs, decision trees, and random forests to evaluate height-performance links and surface long-term scouting trends.',
+      'A statistical analysis of over 20 years of NHL goaltender data using R, tidyverse, GAMs, decision trees, and random forests to evaluate the correlation between player height and performance while surfacing long-term scouting trends.',
     techStack: ['R', 'Tidyverse', 'ggplot2', 'Machine Learning'],
     demoUrl: 'https://rayceramsay.github.io/nhl-goalie-height-analysis/',
     demoLabel: 'Interactive Analysis',
@@ -146,8 +172,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     title: 'Music Trivia Game',
     subtitle: 'Single Player Trivia Game',
     description:
-      'Led a team of 5 to build a music trivia game in Java using Clean Architecture and Test-Driven Development, implementing audio playback, save/load functionality, and SQLite persistence with 90%+ JUnit test coverage.',
-    techStack: ['Java', 'SQLite', 'JUnit', 'Git'],
+      'Led a five-member team to design and build a Java-based music trivia game using Clean Architecture and Test-Driven Development (TDD). Personally implemented audio playback, save/load functionality, and SQLite persistence while maintaining over 90% JUnit test coverage.',
+    techStack: ['Java', 'SQLite', 'JUnit'],
     githubUrl:
       'https://github.com/rayceramsay/music-trivia/tree/post-semester-revision',
     media: [
@@ -164,24 +190,24 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     title: 'Onyx Analytics Dashboard',
     subtitle: 'Nonprofit KPI Dashboard',
     description:
-      'React/Next.js analytics dashboard backed by PostgreSQL and GraphQL, enabling a nonprofit to track KPIs through dynamic filters and charts.',
-    techStack: ['TypeScript', 'React', 'Next.js', 'PostgreSQL', 'GraphQL'],
+      'A React and Next.js analytics dashboard backed by PostgreSQL and GraphQL that enables a nonprofit organization to track key performance indicators (KPIs) through dynamic filters and interactive charts.',
+    techStack: ['TypeScript', 'React', 'PostgreSQL', 'GraphQL'],
     githubUrl: 'https://github.com/onyx-initiative/onyx/pull/96',
     media: [
       {
         type: 'image',
         src: project7Content1,
-        alt: 'Screenshot of the Onyx Analytics Dashboard showing an area/line chart.',
-      },
-      {
-        type: 'image',
-        src: project7Content2,
         alt: 'Screenshot of the Onyx Analytics Dashboard showing aggregated statistics cards.',
       },
       {
         type: 'image',
-        src: project7Content3,
+        src: project7Content2,
         alt: 'Screenshot of the Onyx Analytics Dashboard showing aggregated statistics cards with date filters.',
+      },
+      {
+        type: 'image',
+        src: project7Content3,
+        alt: 'Screenshot of the Onyx Analytics Dashboard showing an area/line chart.',
       },
     ],
   },
@@ -190,7 +216,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     title: 'Like It Or Dump It',
     subtitle: 'Small Business Website',
     description:
-      'Single-page marketing website for a junk removal business built with HTML5, CSS, JavaScript, Vite, and a Node.js/Express backend.',
+      'A single-page marketing website for a junk removal business, built using HTML5, CSS, JavaScript, and Vite, with a Node.js and Express backend.',
     techStack: ['HTML5', 'CSS', 'JavaScript', 'Express', 'Vite'],
     demoUrl: 'https://likeitordumpit.ca',
     demoLabel: 'Live Site',
