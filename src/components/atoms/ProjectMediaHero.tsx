@@ -76,6 +76,11 @@ export function ProjectMediaHero({
           playsInline
           preload='metadata'
           className='h-full w-full object-cover'
+          style={{
+            backgroundImage: `url(${first.poster.blurDataURL!})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
         />
       )}
 
